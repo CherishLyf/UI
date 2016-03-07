@@ -1,0 +1,129 @@
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}      
+
+
+.UI-tabs{
+    margin:10px;
+    overflow: hidden;
+}
+
+/* 默认皮肤 */
+.UI-tabs-nav{
+    display: flex;
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    li{
+        flex: 1;
+        -webkit-flex: 1;
+        background-color: #eee;
+        cursor: pointer;
+        color: #000;
+        &.active{
+            background-color: #3385ff;
+            color: #fff;
+        }
+    }
+}
+
+.UI-tabs-panels{
+    padding: 0 10px;
+    border:1px solid #eee;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.UI-tabs-panel.active{
+    // transition: transform .5s;
+    display: block;
+}
+.UI-tabs-panel{
+    width: 100%;
+    font-size: 16px;
+    display: none;
+}
+
+/* 切换方式 swipe */
+.UI-tabs-panels.effect-swipe{
+    .UI-tabs-panel.active{
+        transition: transform .5s;
+        display: block;
+        position: relative;
+        transform: translateX(0%);
+    }
+    .UI-tabs-panel{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        font-size: 16px;
+        line-height: 40px;
+        display: block;
+        // display: none;
+        transform: translateX(100%);
+    }
+}
+/* 切换方式 swipe end */
+
+/* 选项卡标题 下带箭头的皮肤 */
+.UI-tabs-UnderLine{
+    .UI-tabs-nav{
+        display: flex;
+        text-align: center;
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        li{
+            flex: 1;
+            -webkit-flex: 1;
+            background-color: #eee;
+            cursor: pointer;
+            color: #000;
+            position: relative;
+            // border-bottom: 2px solid #3385ff;
+            &.active{
+                background-color: #fcfcfc;
+                color: #000;
+                border-bottom: 2px solid #3385ff;
+                &:before{   
+                    font-family:"iconfont" !important;
+                    display: inline-block;
+                    content: "\e716";
+                    // margin-right: 5px;
+                    font-size: 12px;
+                    // vertical-align: middle;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 2px;
+                    line-height: 0;
+                    z-index: 10;
+                    transform: translateX(-50%) !important;
+                    color: #3385ff;
+                }
+            }
+        }
+    }
+}
